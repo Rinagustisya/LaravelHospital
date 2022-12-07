@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('alamat_dokter');
             $table->string('no_telp_dokter');
             $table->string('jenis_kelamin_dokter');
-            $table->string('golongan_darah_dokter');
             $table->string('tempat_lahir_dokter');
             $table->date('tanggal_lahir_dokter');
             $table->timestamps();

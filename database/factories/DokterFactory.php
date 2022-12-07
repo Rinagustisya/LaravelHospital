@@ -22,7 +22,6 @@ class DokterFactory extends Factory
             'alamat_dokter' => $this->faker->address,
             'no_telp_dokter' => $this->faker->phoneNumber,
             'jenis_kelamin_dokter' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
-            'golongan_darah_dokter' => $this->faker->randomElement(['A', 'B', 'AB', 'O']),
             'tempat_lahir_dokter' => $this->faker->city,
             'tanggal_lahir_dokter' => $this->faker->dateTimeBetween('-40 years', '-26 years')->format('Y-m-d'),
     
