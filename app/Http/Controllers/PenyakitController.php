@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dokter;
+use App\Models\Penyakit;
 use Illuminate\Http\Request;
 
-class DokterController extends Controller
+class PenyakitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class DokterController extends Controller
      */
     public function index()
     {
-         // Get the data from the database
-        return view('dokter.all', ['data_dokter' => Dokter::all()]);
-                   
+        $penyakit = Penyakit::all();
+        return view('penyakit.all', ['data_penyakit' => $penyakit]);
     }
 
     /**
@@ -43,21 +42,21 @@ class DokterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function show(dokter $dokter)
+    public function show(Penyakit $penyakit)
     {
-        return view('dokter.detail', ['dokter' => $dokter]); 
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function edit(dokter $dokter)
+    public function edit(Penyakit $penyakit)
     {
         //
     }
@@ -66,10 +65,10 @@ class DokterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, dokter $dokter)
+    public function update(Request $request, Penyakit $penyakit)
     {
         //
     }
@@ -77,10 +76,10 @@ class DokterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\Penyakit  $penyakit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(dokter $dokter)
+    public function destroy(Penyakit $penyakit)
     {
         //
     }

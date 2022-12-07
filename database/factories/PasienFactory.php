@@ -17,16 +17,18 @@ class PasienFactory extends Factory
     public function definition()
     {
         return [
-            'nomor_registrasi' => $this->faker->unique()->numberBetween(1, 100),
-            'dokter_id' => $this->faker->numberBetween(1, 10),
-            'nama_pasien' => $this->faker->name,
-            'alamat_pasien' => $this->faker->address,
-            'no_telp_pasien' => $this->faker->phoneNumber,
-            'jenis_kelamin_pasien' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
-            'golongan_darah_pasien' => $this->faker->randomElement(['A', 'B', 'AB', 'O']),
-            'tempat_lahir_pasien' => $this->faker->city,
-            'tanggal_lahir_pasien' => $this->faker->date(),
-            'tanggal_daftar_pasien' => $this->faker->date(),
+            'goldarah_id' => mt_rand(1, 4),
+            'penyakit_id' => mt_rand(1, 4),
+            'dokter_id' => mt_rand(1, 10),
+            'kamar_id' => mt_rand(1, 5),
+            'nomor_registrasi' => fake()->numerify('#######'),
+            'nama_pasien' => fake()->name(),
+            'alamat_pasien' => fake()->address(),
+            'no_telp_pasien' => fake()->phoneNumber(),
+            'jenis_kelamin_id' => mt_rand(1, 2),
+            'tempat_lahir_pasien' => fake()->city(),
+            'tanggal_lahir_pasien' => fake()->date(),
+            'tanggal_daftar_pasien' => fake()->date(),
         ];
     }
 }

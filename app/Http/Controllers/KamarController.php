@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kamar;
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class KamarController extends Controller
@@ -14,7 +14,7 @@ class KamarController extends Controller
      */
     public function index()
     {
-        //
+            return view('kamar.all', ['data_kamar' => Kamar::all()]);
     }
 
     /**
@@ -44,9 +44,9 @@ class KamarController extends Controller
      * @param  \App\Models\kamar  $kamar
      * @return \Illuminate\Http\Response
      */
-    public function show(kamar $kamar)
+    public function show(Kamar $kamar)
     {
-        //
+        return view('kamar.detail', ['kamar' => $kamar]); 
     }
 
     /**

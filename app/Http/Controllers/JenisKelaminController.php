@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dokter;
+use App\Models\jenisKelamin;
 use Illuminate\Http\Request;
 
-class DokterController extends Controller
+class JenisKelaminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class DokterController extends Controller
      */
     public function index()
     {
-         // Get the data from the database
-        return view('dokter.all', ['data_dokter' => Dokter::all()]);
-                   
+        return view('jeniskelamin.all', ['data_jeniskelamin' => jenisKelamin::all()]);
     }
 
     /**
@@ -43,21 +41,21 @@ class DokterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\jenisKelamin  $jenisKelamin
      * @return \Illuminate\Http\Response
      */
-    public function show(dokter $dokter)
+    public function show(jenisKelamin $jenisKelamin)
     {
-        return view('dokter.detail', ['dokter' => $dokter]); 
+        return view('jeniskelamin.detail', ['jenisKelamin' => $jenisKelamin]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\jenisKelamin  $jenisKelamin
      * @return \Illuminate\Http\Response
      */
-    public function edit(dokter $dokter)
+    public function edit(jenisKelamin $jenisKelamin)
     {
         //
     }
@@ -66,10 +64,10 @@ class DokterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\jenisKelamin  $jenisKelamin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, dokter $dokter)
+    public function update(Request $request, jenisKelamin $jenisKelamin)
     {
         //
     }
@@ -77,10 +75,10 @@ class DokterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\dokter  $dokter
+     * @param  \App\Models\jenisKelamin  $jenisKelamin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(dokter $dokter)
+    public function destroy(jenisKelamin $jenisKelamin)
     {
         //
     }
