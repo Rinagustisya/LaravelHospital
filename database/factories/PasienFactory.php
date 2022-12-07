@@ -18,6 +18,7 @@ class PasienFactory extends Factory
     {
         return [
             'goldarah_id' => mt_rand(1, 4),
+            'penyakit_id' => mt_rand(1, 4),
             'dokter_id' => mt_rand(1, 10),
             'kamar_id' => mt_rand(1, 5),
             'nomor_registrasi' => fake()->numerify('#######'),

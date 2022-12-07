@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\models\Kamar;
 use App\models\Goldarah;
 use App\models\jenisKelamin;
+use App\models\Penyakit;
 
 class DatabaseSeeder extends Seeder
 {
@@ -78,6 +79,26 @@ class DatabaseSeeder extends Seeder
 
         jenisKelamin::create([
             'jenis_kelamin' => 'Perempuan'
+        ]);
+
+        Penyakit::create([
+            'kode_penyakit' => 3001,
+            'nama_penyakit' => 'Jantung'
+        ]);
+
+        Penyakit::create([
+            'kode_penyakit' => 3002,
+            'nama_penyakit' => 'Diabetes'
+        ]);
+
+        Penyakit::create([
+            'kode_penyakit' => 3003,
+            'nama_penyakit' => 'Kanker'
+        ]);
+
+        Penyakit::create([
+            'kode_penyakit' => 3005,
+            'nama_penyakit' => 'Stroke'
         ]);
         
     }

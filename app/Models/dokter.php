@@ -11,6 +11,7 @@ class Dokter extends Model
     
     protected $table = 'dokters';
     protected $fillable = [
+        'penyakit_id',
         'nama_dokter',
         'alamat_dokter',
         'no_telp_dokter',
@@ -24,5 +25,10 @@ class Dokter extends Model
     public function pasien()
     {
         return $this->hasMany(pasien::class);
+    }
+
+    public function penyakit()
+    {
+        return $this->belongsTo(Penyakit::class);
     }
 }

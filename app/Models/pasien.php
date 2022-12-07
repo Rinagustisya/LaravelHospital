@@ -33,4 +33,8 @@ class pasien extends Model
     {
         return $this->belongsTo(jenisKelamin::class);
     }
+    public function penyakit()
+    {
+        return $this->belongsTo(Penyakit::class);
+    }
 }

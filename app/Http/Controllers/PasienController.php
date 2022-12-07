@@ -6,6 +6,7 @@ use App\Models\pasien;
 use App\Models\Goldarah;
 use App\Models\Dokter;
 use App\Models\Kamar;
+use App\Models\Penyakit;
 use App\Models\jenisKelamin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class PasienController extends Controller
 
     public function create()
     {
-        return view('pasien.create', ['kamar' => Kamar::all(), 'dokter' => Dokter::all(), 'goldarah' => Goldarah::all(),
+        return view('pasien.create', ['penyakit' => Penyakit::all(), 'kamar' => Kamar::all(), 'dokter' => Dokter::all(), 'goldarah' => Goldarah::all(),
           'jenisKelamin' => jenisKelamin::all()]);      
     }
 
@@ -37,7 +38,7 @@ class PasienController extends Controller
 
     public function edit(pasien $pasien)
     {
-        return view('pasien.edit', ['kamar' => Kamar::all(), 'dokter' => Dokter::all(), 'goldarah' => Goldarah::all(),
+        return view('pasien.edit', ['penyakit' => Penyakit::all(), 'kamar' => Kamar::all(), 'dokter' => Dokter::all(), 'goldarah' => Goldarah::all(),
           'jenisKelamin' => jenisKelamin::all(), 'pasien' => $pasien]);
     }
 

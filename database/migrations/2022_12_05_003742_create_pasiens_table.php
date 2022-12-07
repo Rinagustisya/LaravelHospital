@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pasiens', function (Blueprint $table) {
             $table->id();
             $table->integer('nomor_registrasi')->unique();
+            $table->foreignId('penyakit_id');
             $table->foreignId('kamar_id');
             $table->foreignId('dokter_id');
             $table->string('nama_pasien');

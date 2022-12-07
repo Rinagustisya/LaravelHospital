@@ -18,6 +18,7 @@ class DokterFactory extends Factory
     {
         return [
             'kode_dokter' => $this->faker->numberBetween(1000, 2000),
+            'penyakit_id' => mt_rand(1, 4),
             'nama_dokter' => $this->faker->name,
             'alamat_dokter' => $this->faker->address,
             'no_telp_dokter' => $this->faker->phoneNumber,

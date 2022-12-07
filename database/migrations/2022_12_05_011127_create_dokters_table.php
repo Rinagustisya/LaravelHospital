@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('dokters', function (Blueprint $table) {
             $table->id();
             $table->integer('kode_dokter')->unique();
+            $table->foreignId('penyakit_id');
             $table->string('nama_dokter');
             $table->string('alamat_dokter');
             $table->string('no_telp_dokter');

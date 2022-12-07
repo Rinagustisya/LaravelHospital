@@ -13,6 +13,7 @@
       <tr class="table table-dark">
         <th scope="col">ID</th>
         <th scope="col">Nomor Registrasi</th>
+        <th scope="col">Penyakit yang Diderita</th>
         <th scope="col">Nama Kamar</th>
         <th scope="col">Nama Dokter Praktek</th>
         <th scope="col">Nama Pasien</th>
@@ -32,6 +33,7 @@
         
         <td>{{ $pasien->id }}</td>
         <td>{{ $pasien->nomor_registrasi }}</td>
+        <td>{{ $pasien->penyakit->nama_penyakit }}</td>
         <td>{{ $pasien->kamar->nama_kamar }}</td>
         <td>{{ $pasien->dokter->nama_dokter }}</td>
         <td>{{ $pasien->nama_pasien }}</td>

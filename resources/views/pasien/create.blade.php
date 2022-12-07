@@ -8,7 +8,15 @@
             <label for="nis" class="from-label">Nomor Registrasi</label>
             <input type="text" class="form-control" id="nomor_registrasi" name="nomor_registrasi" value="{{old('nomor_registrasi')}}">
         </div>
-        <br>
+        <div class="mb-3">
+            <label for="penyakit_id" class="from-label">Pilih Penyakit</label>
+            <select class="form-select"  name="penyakit_id" id="penyakit_id">
+                <option selected>Pilih Penyakit Pasien</option>
+                @foreach ($penyakit as $sakit)
+                    <option value="{{ $sakit->id }}">{{ $sakit->nama_penyakit }}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="mb-3">
             <label for="kamarid" class="from-label">Pilih Kamar</label>
             <select class="form-select"  name="kamar_id" id="kamar_id">
@@ -18,17 +26,17 @@
                 @endforeach
             </select>
         </div>
-        <br>
         <div class="mb-3">
             <label for="dokter-id" class="from-label">Pilih Dokter</label>
             <select class="form-select"  name="dokter_id" id="dokter_id">
                 <option selected>Pilih Dokter yang menangani</option>
-                @foreach ($dokter as $doctor)
-                    <option value="{{ $doctor->id }}">{{ $doctor->nama_dokter }}</option>
-                @endforeach
+                @if (old("penyakit_id", $dokter->penyakit_id == $doctor->penyakit_id))
+                    @foreach ($dokter as $doctor)
+                        <option name="nama-dokter" value="{{ $doctor->id }}">{{ $doctor->nama_dokter }}</option>
+                    @endforeach
+                @endif
             </select>
         </div>
-        <br>
         <div class="mb-3">
             <label for="nama" class="from-label">Nama Pasien</label>
             <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" value="{{old('nama_pasien')}}">
@@ -41,7 +49,6 @@
             <label for="alamat" class="from-label">Nomor Telfon</label>
             <input type="text" class="form-control" id="no_telp_pasien" name="no_telp_pasien" value="{{old('no_telp_pasien')}}">
         </div>
-        <br>
         <div class="mb-3">
             <label for="golongan-darah" class="from-label">Golongan Darah</label>
             <select class="form-select"  name="goldarah_id" id="goldarah_id">
